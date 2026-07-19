@@ -1,0 +1,32 @@
+{
+  "profile": {
+    "name": "我的生活记录",
+    "summary": "把走过的路、看过的风景和那些普通却值得记住的日子，留在这里。"
+  },
+  "moments": [
+    {
+      "date": "2026-05-18T17:40:00+08:00",
+      "title": "晚风经过西湖",
+      "text": "沿着湖边慢慢走。天色暗下来之后，水面仍然留着一点光。",
+      "location": { "name": "杭州 · 西湖", "lat": 30.2448, "lng": 120.1501 },
+      "tags": ["散步", "杭州"],
+      "photos": [{ "src": "https://images.unsplash.com/photo-1537531383496-f4749b8032cf?auto=format&fit=crop&w=1400&q=85", "alt": "西湖水面与远山" }]
+    },
+    {
+      "date": "2025-10-03T09:15:00+08:00",
+      "title": "山里的秋天先到了",
+      "text": "清晨的空气很凉，树叶已经开始变色。今天没有赶路，只是好好地待在山里。",
+      "location": { "name": "北京 · 香山", "lat": 39.9904, "lng": 116.1869 },
+      "tags": ["旅行", "秋天"],
+      "photos": [{ "src": "https://images.unsplash.com/photo-1477414956199-7dafc86a4f1a?auto=format&fit=crop&w=1400&q=85", "alt": "秋天的山林" }]
+    },
+    {
+      "date": "2024-02-14T16:20:00+08:00",
+      "title": "海边的一整个下午",
+      "text": "浪一次次推上来，时间也慢了下来。临走前回头看，海还是一样安静。",
+      "location": { "name": "厦门 · 环岛路", "lat": 24.438, "lng": 118.13 },
+      "tags": ["海边", "旅行"],
+      "photos": [{ "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=85", "alt": "蓝色海面与沙滩" }]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f6f2">
+  <title>拾光地图</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="lock-screen" class="lock-screen">
+    <section class="lock-panel" aria-labelledby="lock-title">
+      <div class="brand-mark" aria-hidden="true">光</div>
+      <p class="eyebrow">PRIVATE JOURNAL</p>
+      <h1 id="lock-title">拾光地图</h1>
+      <p class="lock-copy">输入访问密码，解锁你的生活记录。</p>
+      <form id="unlock-form">
+        <label class="sr-only" for="password">访问密码</label>
+        <div class="password-field">
+          <input id="password" type="password" autocomplete="current-password" placeholder="访问密码" required>
+          <button id="toggle-password" class="icon-button" type="button" title="显示密码" aria-label="显示密码">
+            <span aria-hidden="true">◉</span>
+          </button>
+        </div>
+        <button class="primary-button" type="submit">进入拾光地图</button>
+        <p id="unlock-error" class="form-error" role="alert"></p>
+      </form>
+      <p class="privacy-note">内容在浏览器中解密，密码不会发送到服务器。</p>
+    </section>
+  </main>
+
+  <div id="app" class="app" hidden>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="拾光地图首页"><span>光</span>拾光地图</a>
+      <div class="header-actions">
+        <button id="theme-button" class="icon-button" type="button" title="切换主题" aria-label="切换主题">☼</button>
+        <button id="lock-button" class="icon-button" type="button" title="锁定" aria-label="锁定">⌁</button>
+      </div>
+    </header>
+
+    <section class="intro-band">
+      <div>
+        <p id="today-label" class="eyebrow"></p>
+        <h1>生活，有迹可循</h1>
+        <p id="journal-summary" class="intro-copy"></p>
+      </div>
+      <dl class="stats">
+        <div><dt id="stat-moments">0</dt><dd>篇记录</dd></div>
+        <div><dt id="stat-places">0</dt><dd>个地点</dd></div>
+        <div><dt id="stat-years">0</dt><dd>年时光</dd></div>
+      </dl>
+    </section>
+
+    <nav class="view-tabs" aria-label="查看方式">
+      <button class="tab active" data-view="timeline" type="button">时间线</button>
+      <button class="tab" data-view="map" type="button">地图</button>
+    </nav>
+
+    <section class="toolbar" aria-label="筛选记录">
+      <label class="search-field"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索文字、地点或标签"></label>
+      <select id="year-filter" aria-label="选择年份"><option value="all">全部年份</option></select>
+      <select id="tag-filter" aria-label="选择标签"><option value="all">全部标签</option></select>
+      <button id="sort-button" class="secondary-button" type="button" aria-label="切换排序">最新在前 ↓</button>
+    </section>
+
+    <main class="content-shell">
+      <section id="timeline-view" class="view-panel">
+        <div id="timeline" class="timeline"></div>
+        <div id="empty-state" class="empty-state" hidden><h2>没有找到记录</h2><p>换个年份、标签或关键词试试。</p></div>
+      </section>
+      <section id="map-view" class="view-panel" hidden>
+        <div class="map-layout">
+          <div id="map" aria-label="生活记录地图"></div>
+          <aside id="place-list" class="place-list" aria-label="地点列表"></aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="photo-dialog" class="photo-dialog">
+    <button id="close-dialog" class="dialog-close" type="button" aria-label="关闭">×</button>
+    <img id="dialog-image" alt="">
+    <div><p id="dialog-date" class="eyebrow"></p><h2 id="dialog-title"></h2></div>
+  </dialog>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="vault.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
